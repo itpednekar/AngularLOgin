@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+<body>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                 </div>
+                <div style="margin-top: 100px;">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <div class="jumbotron" style="opacity: 0.9; background-color:lavenderblush; height: 700px; width: 500px">
+        
+                                    <form #myForm = "ngForm"  (ngSubmit)="onAdd(myForm)">
+                                                <div class="form-group">
+                                                <label for="">Address</label>
+                                                <textarea class="form-control" cols="30" rows="7" 
+                                                                id="address" name="address" ngModel></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                        <label for="">Pin Code</label>
+                                                        <input type="text" class="form-control" id="pinCode" 
+                                                                name="pinCode" ngModel>
+                                                </div>
+                                                <div class="form-group">
+                                                        <label for="">State</label>
+                                                        <input type="text" class="form-control" id="state" 
+                                                                name="state" ngModel>
+                                                </div>
+                        
+                                                <div class="form-group">
+                                                        <button type="submit" class="btn btn-success">Add</button>   
+                                                </div>
+                                    </form>
+                                        
+                                </div>
+                                </div>
+                                </div> 
+                
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-6"> 
+                </div>   
+                
+                        
+                         
+</body>
+</html>

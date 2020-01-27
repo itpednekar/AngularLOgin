@@ -1,0 +1,29 @@
+<div  class="jumbotron">
+    <h2 style="text-align: center;">Users List</h2>
+    <hr>
+        <table style="align-content: center;" class="table table-hover table-stripped table-responsive">
+                <thead>
+                    <th>User Id</th>
+                    <th >Name</th>
+                    <th >Email</th>
+                    <th >Role</th>
+                    <th >Mobile No</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of users">
+                        <td>{{item.userId}}</td>  
+                        <td>{{item.name}}</td>   
+                        <td>{{item.email}}</td>
+                        <td>{{item.role}}</td>
+                        <td>{{item.mobNo}}</td>
+
+                        <!-- <td *ngIf="item.role === 'MANAGER'"> 
+                                <a class="btn btn-danger" routerLink="/block-mgr/{{item.userId}}"> Block </a> 
+                        </td> -->
+
+                    </tr>         
+                </tbody>
+              </table>
+</div>

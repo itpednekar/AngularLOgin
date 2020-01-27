@@ -1,0 +1,33 @@
+<div  class="jumbotron">
+    <h2 style="text-align: center;">FoodType List</h2>
+    <hr>
+    <a class="btn btn-primary" routerLink="/insert-food-type"> Insert new Food Type </a>
+    <hr>
+        <table style="align-content: center;" class="table table-hover table-stripped table-responsive">
+                <thead>
+                    <th>FoodType Id</th>
+                    <th >Food Type</th>
+                    <th >Food Category</th>
+                    <th >Event Id</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of foodType">
+                        <td>{{item.foodId}}</td>  
+                        <td>{{item.foodType}}</td>   
+                        <td>{{item.category}}</td>
+                        <td>{{item.event.eventId}}</td>
+
+                        <td> 
+                                <a class="btn btn-primary" routerLink="/edit-food-type/{{item.foodId}}"> Edit </a> 
+                        </td>
+                        <td> 
+                                <a class="btn btn-danger" routerLink="/delete-food-type/{{item.foodId}}"> Delete </a> 
+                        </td>
+
+                    </tr>         
+                </tbody>
+              </table>
+             
+
+</div>
