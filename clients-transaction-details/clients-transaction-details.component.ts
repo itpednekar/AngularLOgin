@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ManagerService } from '../manager.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clients-transaction-details',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsTransactionDetailsComponent implements OnInit {
 
-  constructor() { }
+  transaction : any
+  constructor( private managerService : ManagerService,
+                private router : Router) { }
 
   ngOnInit() {
+    let obResult = this.managerService.getClientTransactionDetails()
+    obResult.subscribe((data)=>{
+      this.transaction = data
+      console.log(data)
+    })
   }
 
 }

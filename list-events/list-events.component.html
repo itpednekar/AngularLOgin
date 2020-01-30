@@ -1,15 +1,15 @@
-<div  class="jumbotron">
-    <h2 style="text-align: center;">Users List</h2>
-    <hr>
-        <table style="align-content: center;" class="table table-hover table-stripped table-responsive">
+<div  class="container">
+    <h1 style="text-align: center;">List of all Events</h1>
+    <br>
+    <table style="text-align: center;" class="table table-hover table-responsive  table-striped table-bordered" >
                 <thead>
-                    <th>event Id</th>
+                    <th style="text-align: center;">event Id</th>
                     <!-- <th> User Id</th> -->
-                    <th >eventDate</th>
-                    <th >noOfGuests</th>
-                    <th >eventDuration</th>
-                    <th >decorationBudget</th>
-                    <th> totalCost</th>
+                    <th style="text-align: center;" >eventDate</th>
+                    <th style="text-align: center;" >noOfGuests</th>
+                    <th style="text-align: center;">eventDuration</th>
+                    <th style="text-align: center;">decorationBudget</th>
+                    <th style="text-align: center;"> totalCost</th>
                     <th></th>
                 </thead>
                 <tbody>
@@ -21,7 +21,6 @@
                         <td>{{item.eventDuration}}</td>
                         <td>{{item.decorationBudget}}</td>
                         <td>{{item.totalCost}}</td>
-
                     </tr>         
                 </tbody>
               </table>

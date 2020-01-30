@@ -16,5 +16,8 @@ export class ManagerService {
   {
     return this.http.get("http://localhost:8080/Day1.1/admin/listevents")
   }
-  
+  getClientTransactionDetails()
+  {
+    return this.http.get("http://localhost:8080/Day1.1/manager/clienttransactionstatus")
+  }
 }
