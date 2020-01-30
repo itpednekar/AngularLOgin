@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ClientService } from '../client.service';
 
 @Component({
   selector: 'app-clientfeedback',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientfeedbackComponent implements OnInit {
 
-  constructor() { }
+
+  value : any
+  myDetails : any
+  feedback : any
+
+  constructor( private clientService : ClientService,
+    private route : ActivatedRoute,
+    private router : Router) { }
 
   ngOnInit() {
+    this.myDetails = JSON.parse(localStorage.getItem('myDetails'));
+    console.log(this.myDetails.userId) 
+  }
+
+  onSendAway(entireData)
+  {
+  
+    let feed = entireData.form.value;
+    console.log(feed)
+
+
+    let obResult = this.clientService.insertFeedback(this.myDetails.userId, feed)
+  
+    obResult.subscribe((data)=>{
+      console.log(data)
+      alert("Thank you for your feedback")
+      this.router.navigate(['/home']);
+      
+    })
   }
 
 }

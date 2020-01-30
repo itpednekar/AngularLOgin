@@ -1,1 +1,44 @@
-<p>paymentdetails works!</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        body         { padding-top:50px; }
+        form, pre    { margin-bottom:50px; }
+    </style>
+
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body style="margin-top: 60px;" ng-app="formApp" ng-controller="formController">
+        <h1  style="text-align: center; ">Payment Details</h1>
+        <br>
+    <div class="container" style="width: 500px;">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    <form #myForm="ngForm" (ngSubmit)="makePayment(myForm)">
+                        <div class="form-group">
+                            <label>Event Id</label>
+                            <input type="text" class="form-control" readonly name="eventId" [value]="eventDetails.eventId">
+                        </div> 
+                        <div class="form-group">
+                                <label>Total cost</label>
+                                <input type="text" class="form-control" readonly name="totalCost" [value]="eventDetails.totalCost">
+                        </div>
+                        <div class="form-group">
+                            <label for="selectEvent">Payment Type</label>
+                            <select (change)="onSelectPayment($event)"  class="form-control" name="tranType" id="tranType" ngModel>
+                               <option>CASH</option>  
+                               <option>ONLINE</option> 
+                               <option>CHECK</option> 
+                            </select>
+                        </div>   
+                            <button type="submit" class="btn btn-success ">Make Payment</button>
+                    </form>    
+            </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<div style="margin-top: 80px;" class="container">
+        <table style="text-align: center;" class="table table-responsive table-hover" >
+            <thead style="text-align: center;">
+                <th style="text-align: center;">Appointment Id</th>
+                <th style="text-align: center;">Appointment Date</th>
+                <th style="text-align: center;">Event Id</th>
+                <th style="text-align: center;">Manager Id</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of appointment">
+                    <td>{{item.appointmentId}}</td>
+                    <td>{{item.appointmentDate}}</td>
+                    <td>{{item.event.eventId}}</td>
+                    <td>{{item.mgr.managerId}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

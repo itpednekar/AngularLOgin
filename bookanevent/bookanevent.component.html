@@ -1,93 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+        body,html {
+                height: 100%;
+                margin: 0%
+                }
+                .bg-img{
+                        background-image: url("assets/images/background.jpeg");
 
-    <!-- CSS -->
-    <!-- load up bootstrap and add some spacing -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <style>
-        body         { padding-top:50px; }
-        form, pre    { margin-bottom:50px; }
-    </style>
-
-    <!-- JS -->
-    <!-- load up angular and our custom script -->
-    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
-    <script src="app.js"></script>
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                }
+        </style>
 </head>
-
-<!-- apply our angular app and controller -->
-<body ng-app="formApp" ng-controller="formController">
-<div class="col-xs-12 col-sm-10 col-sm-offset-1">
-
-    <h2>Angular Checkboxes and Radio Buttons</h2>
-
-    <form>
-    
-        <!-- NAME INPUT -->
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" name="name" ng-model="formData.name">
-        </div>
+<body>
         
-        <!-- MULTIPLE CHECKBOXES -->
-        <label>Favorite Colors</label>
-        <div class="form-group">
-            <label class="checkbox-inline">
-                <input type="checkbox" name="favoriteColors" ng-model="formData.colors.red"> Red
-            </label>
-            <label class="checkbox-inline">
-                <input type="checkbox" name="favoriteColors" ng-model="formData.colors.blue"> Blue
-            </label>
-            <label class="checkbox-inline">
-                <input type="checkbox" name="favoriteColors" ng-model="formData.colors.green"> Green
-            </label>
-        </div>
-        
-        <!-- CUSTOM VALUE CHECKBOXES -->
-        <label>Personal Question</label>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" name="awesome" ng-model="formData.awesome" ng-true-value="ofCourse" ng-false-value="iWish">
-                Are you awesome?
-            </label>
-        </div>
-        
-        <!-- RADIO BUTTONS -->
-        <label>Chicken or the Egg?</label>
-        <div class="form-group">
-            <div class="radio">
-                <label>
-                    <input type="radio" name="chickenEgg" value="chicken" ng-model="formData.chickenEgg">
-                    Chicken
-                </label>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="chickenEgg" value="egg" ng-model="formData.chickenEgg">
-                    Egg
-                </label>
-            </div>
+           
+        <div style="margin-top: 50px;">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="jumbotron" style="opacity: 0.9; background-color: aliceblue; height: 780px; width: 400px">
+
+                                <div class="container">
+                                        <form #myForm="ngForm" (ngSubmit)="onAdd(myForm)">
+                                                        <h2 style="text-align: center">Event Details</h2>
+                                                        <div class="row">
+                                                        <!-- <div class="col-md-6"></div> -->
+                                                        <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                        <label for="selectEvent">Select an Event</label>
+                                                                        <select (change)="onSelectEvent($event)"  class="form-control" name="eventDesc" id="eventDesc">
+                                                                           <option *ngFor="let item of eventDesc" [value]="item.eventDescId" >{{item.eventName}} {{item.eventCost}}</option>  
+                                                                        </select>
+                                                                </div>      
+                                            
+                                                                <div class="form-group">
+                                                                <label for="">Event Date</label>
+                                                                <input type="date" class="form-control" id="eventDate" name="eventDate" ngModel>     
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                        <label for="selectVenueCity">Select Venue City</label>
+                                                                        <select (change)="onChangeVenueCity($event.target.value)" class="form-control" id="selectVenueCity" ngModel >
+                                                                           <option *ngFor="let item of venuCity" [value]="item.venueCityId">
+                                                                                   {{item.venueCityName}}
+                                                                           </option>  
+                                                                        </select>
+                                                                </div>
+                                                                <div class="form-group" *ngFor="let item of location">
+                                                                        <label>
+                                                                          <input id="locationId" (change)="onSelectLocation($event)" [value]="item.locationId" type="radio" name="locationId">
+                                                                          <img style="width: 200px;" src="data:image/gif;base64,{{item.locationImage}}" alt=""> &nbsp; &nbsp;{{item.locationName}}&nbsp;&nbsp;&nbsp;&nbsp;{{item.locationCost}}
+                                                                        </label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                <label for="">Enter no of guest</label>
+                                                                <input type="number" class="form-control" id="noOfGuests" name="noOfGuests" ngModel>         
+                                                                </div>
+                                                                <div class="form-group">
+                                                                        <label>Select Food Type </label>
+                                                                        <select (change)="onSelectFoodType($event)" class="form-control" id="selectFoodType">
+                                                                                <option *ngFor="let item of food" [value]="item.foodId">
+                                                                                        {{item.foodType}}  {{item.foodSubMenu}} {{item.cost}}
+                                                                                </option>  
+                                                                        </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                <label for="">Time period</label>
+                                                                <input type="number" class="form-control" id="eventDuration" name="eventDuration" ngModel > 
+                                                                </div>
+                                                                <div class="form-group">
+                                                                        <label for="">Decoration Budget</label>
+                                                                        <input type="number" class="form-control" id="decorationBudget" name="decorationBudget" ngModel> 
+                                                                </div>
+
+
+                                                                <div class="form-group">
+                                                                     <input id="theme" (change)="onSelectTheme($event)" [value]="true" type="radio" name="theme">  Theme
+                                                                </div>
+                                                                <div class="form-group">
+                                                                     <input id="musicSystem" (change)="onSelectMusicSystem($event)" [value]="true" type="radio" name="musicSystem">  Music System
+                                                                </div>
+                                                               
+                                                                <div class="form-group">
+                                                                <button type="submit" class="btn btn-success">Submit</button>    
+                                                                </div>
+                                                        </div>
+                                                        </div>
+                                                </form>
+                                
+                        </div>
+                        </div>
+                        </div>
         </div>
-        
-        <button type="submit" class="btn btn-danger btn-lg">Send Away!</button>
-        
-    </form>
-    
-    <!-- SHOW OFF OUR FORMDATA OBJECT -->
-    <h2>Sample Form Object</h2>
-    <pre>
-        {{ formData }}
-    </pre>
-    
-    <footer class="text-center">
-        <p>View the <a href="http://scotch.io/tutorials/javascript/handling-checkboxes-and-radio-buttons-in-angular-forms">tutorial</a> by <a href="http://scotch.io">scotch.io</a></p>
-        
-        <h4>Other Angular Form Tutorials</h4>
-        <p><a href="http://scotch.io/tutorials/javascript/submitting-ajax-forms-the-angularjs-way">Submitting AJAX Forms: The AngularJS Way</a></p>
-        <p><a href="http://scotch.io/tutorials/javascript/angularjs-form-validation">AngularJS Form Validation</a></p>
-    </footer>
-    
-</div>
+                       
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        
+                                </div>  
+                         
 </body>
 </html>

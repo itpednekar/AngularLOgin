@@ -141,61 +141,7 @@
 
 
 <body  id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50" >
-  
-    <!-- <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-
-            <a class="navbar-brand" href="#myPage">Logo</a>
-          </div>
-          <div *ngIf="flag==='false'">
-              <ul class="nav navbar-nav navbar-right">
-                  <li><a routerLink="/home"> <span>Home</span> </a></li>
-                  <li><a routerLink="/about-us">About Us</a></li>
-                  <li><a routerLink="/events">Events</a></li>
-                  <li><a routerLink="/portfolio">Portfolio</a></li>
-                  <li><a routerLink="/feedback">Feedback</a></li>
-                  <li><a routerLink="/contact-us">Contact Us</a></li>
-                </ul>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar" [ngSwitch]="role" *ngIf="flag==='true'">
-            
-                  <ul *ngSwitchCase="'CLIENT'" class="nav navbar-nav navbar-right">
-                      <li><a routerLink="/mydetails">My Details</a></li>
-                      <li><a routerLink="/bookanevent">Book an Event</a></li>
-                      <li><a routerLink="/paymentdetails">Payment Details</a></li>
-                      <li><a routerLink="/bookappointmet">Book Appointment</a></li> 
-                      <li><a routerLink="/home">Logout</a></li>
-                </ul>
-              
-             
-           
-             
-                  <ul *ngSwitchCase="'ADMIN'"  class="nav navbar-nav navbar-right">
-                      <li><a routerLink="/list-users">List Users</a></li>
-                      <li><a routerLink="/insert-mgr">Add Manager</a></li>
-                      <li><a routerLink="/list-events-desc">List Event Descriptions</a></li>
-                      <li><a routerLink="/list-food-type">List FoodTypes</a></li>
-                      <li><a routerLink="/list-food-sub-menu">List Food SubMenus</a></li> 
-                      <li><a routerLink="/list-venue-city">List VenueCities</a></li>
-                      <li><a routerLink="/list-location">List Locations</a></li> 
-                      <button type="button" (click)="logout()">Logout</button>
-                </ul>
-             
-          </div>
-        </div>
-      </nav> -->
-
-      <!-- carousel -->
         <div id="myCarousel" class="carousel slides" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                  <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-            
-                <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                   <div class="item active">
                     <img src="assets/images/event-management.jpg" alt="New York" width="1200" height="400">
@@ -248,14 +194,14 @@
                   </div>
                   <div class="col-md-8">
                     <div class="row">
-                      <div class="col-sm-6 form-group">
-                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                      </div>
-                      <div class="col-sm-6 form-group">
-                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                      </div>
+                        <div class="col-sm-6 form-group">
+                          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                        </div>
                     </div>
-                    <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                             <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
                     <br>
                     <div class="row">
                       <div class="col-md-12 form-group">

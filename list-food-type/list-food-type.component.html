@@ -8,7 +8,8 @@
                     <th>FoodType Id</th>
                     <th >Food Type</th>
                     <th >Food Category</th>
-                    <th >Event Id</th>
+                    <th >Food Sub Menu</th>
+                    <th> Food Cost</th>
                     <th></th>
                 </thead>
                 <tbody>
@@ -16,7 +17,8 @@
                         <td>{{item.foodId}}</td>  
                         <td>{{item.foodType}}</td>   
                         <td>{{item.category}}</td>
-                        <td>{{item.event.eventId}}</td>
+                        <td>{{item.foodSubMenu}}</td>
+                        <td>{{item.cost}}</td>
 
                         <td> 
                                 <a class="btn btn-primary" routerLink="/edit-food-type/{{item.foodId}}"> Edit </a> 

@@ -27,7 +27,6 @@ import { ListEventsDescComponent } from './list-events-desc/list-events-desc.com
 import { ListVenueCityComponent } from './list-venue-city/list-venue-city.component';
 import { ListLocationComponent } from './list-location/list-location.component';
 import { ListFoodTypeComponent } from './list-food-type/list-food-type.component';
-import { ListFoodSubMenuComponent } from './list-food-sub-menu/list-food-sub-menu.component';
 import { EventsComponent } from './events/events.component';
 import { InsertMgrComponent } from './insert-mgr/insert-mgr.component';
 import { EditMgrComponent } from './edit-mgr/edit-mgr.component';
@@ -38,7 +37,6 @@ import { InsertEventDescComponent } from './insert-event-desc/insert-event-desc.
 import { InsertFoodTypeComponent } from './insert-food-type/insert-food-type.component';
 import { EditFoodTypeComponent } from './edit-food-type/edit-food-type.component';
 import { DeleteFoodTypeComponent } from './delete-food-type/delete-food-type.component';
-import { InsertFoodSubMenuComponent } from './insert-food-sub-menu/insert-food-sub-menu.component';
 import { DeleteFoodSubMenuComponent } from './delete-food-sub-menu/delete-food-sub-menu.component';
 import { EditFoodSubMenuComponent } from './edit-food-sub-menu/edit-food-sub-menu.component';
 import { DeleteLocationComponent } from './delete-location/delete-location.component';
@@ -46,48 +44,12 @@ import { EditLocationComponent } from './edit-location/edit-location.component';
 import { InsertLocationComponent } from './insert-location/insert-location.component';
 import { InsertVenueComponent } from './insert-venue/insert-venue.component';
 import { DeleteVenueComponent } from './delete-venue/delete-venue.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { ReportComponent } from './report/report.component';
+import { ClientsTransactionDetailsComponent } from './clients-transaction-details/clients-transaction-details.component';
+import { AfterBookEventComponent } from './after-book-event/after-book-event.component';
 
-// const parentModuleRoutes : Routes = [
-//   {
-//     path:'',component:HomeComponent,
-//   },
-//   {
-//     path:'home',component:HomeComponent,children:[{path:'about-us',component:AboutUsComponent}]
-//   },
-//   { 
-//     path:'home',component:HomeComponent,children:[{path:'contact-us',component:ContactUsComponent}]
-//   },
-//   { 
-//     path:'home',component:HomeComponent,children:[{path:'events',component:EventsComponent}]
-//   },
-//   { 
-//     path:'home',component:HomeComponent,children:[{path:'feedback',component:FeedbackComponent}]
-//   },
-//   { 
-//     path:'home',component:HomeComponent,children:[{path:'portfolio',component:PortfolioComponent}]
-//   },
-//   {
-//     path:'home',component:HomeComponent,children:[{path:'mydetails',component:MydetailsComponent}]
-//   },
-//   {
-//     path:'home',component:HomeComponent,children:[{path:'login',component:LoginComponent}]
-//   },
-//   {
-//     path:'home',component:HomeComponent,children:[{path:'register',component:RegisterComponent}]
-//   },
-//   {
-//     path:'home',component:HomeComponent,children:[{path:'clientfeedback',component:ClientfeedbackComponent}]
-//   },
-//   {
-//     path:'home',component:HomeComponent,children:[{path:'bookanevent',component:BookaneventComponent}]
-//   },
-//   {
-//     path:'home',component:HomeComponent,children:[{path:'bookappointment',component:BookappointmentComponent}]
-//   },
-//   {
-//     path:'home',component:HomeComponent,children:[{path:'paymentdetails',component:PaymentdetailsComponent}]
-//   }
-// ];
+
 
 @NgModule({
   declarations: [
@@ -110,7 +72,6 @@ import { DeleteVenueComponent } from './delete-venue/delete-venue.component';
     ListVenueCityComponent,
     ListLocationComponent,
     ListFoodTypeComponent,
-    ListFoodSubMenuComponent,
     EventsComponent,
     InsertMgrComponent,
     EditMgrComponent,
@@ -121,14 +82,17 @@ import { DeleteVenueComponent } from './delete-venue/delete-venue.component';
     InsertFoodTypeComponent,
     EditFoodTypeComponent,
     DeleteFoodTypeComponent,
-    InsertFoodSubMenuComponent,
     DeleteFoodSubMenuComponent,
     EditFoodSubMenuComponent,
     DeleteLocationComponent,
     EditLocationComponent,
     InsertLocationComponent,
     InsertVenueComponent,
-    DeleteVenueComponent
+    DeleteVenueComponent,
+    AppointmentComponent,
+    ReportComponent,
+    ClientsTransactionDetailsComponent,
+    AfterBookEventComponent
   ],
   imports: [
     FormsModule, //for ngModule 
@@ -149,13 +113,12 @@ import { DeleteVenueComponent } from './delete-venue/delete-venue.component';
       {path:"mydetails",component :MydetailsComponent},
       {path:"paymentdetails",component :PaymentdetailsComponent},
       {path:"bookanevent",component :BookaneventComponent},
-      {path:"bookappointment",component :BookappointmentComponent},
-      {path:"clientfeedback",component :RegisterComponent},
+      {path:"bookanppointment",component :BookappointmentComponent},
+      {path:"clientfeedback",component :ClientfeedbackComponent},
       {path:"list-users",component :ListUsersComponent},
       {path:"list-events",component :ListEventsComponent},
       {path:"list-events-desc",component :ListEventsDescComponent},
       {path:"list-food-type",component :ListFoodTypeComponent},
-      {path:"list-food-sub-menu",component :ListFoodSubMenuComponent},
       {path:"list-location",component :ListLocationComponent},
       {path:"list-venue-city",component :ListVenueCityComponent},
       {path:"insert-mgr",component :InsertMgrComponent},
@@ -167,14 +130,17 @@ import { DeleteVenueComponent } from './delete-venue/delete-venue.component';
       {path:"insert-food-type",component :InsertFoodTypeComponent},
       {path:"edit-food-type/:foodId",component :EditFoodTypeComponent},
       {path:"delete-food-type/:foodId",component :DeleteFoodTypeComponent},
-      {path:"insert-food-sub-menu",component :InsertFoodSubMenuComponent},
       {path:"insert-location",component :InsertLocationComponent},
       {path:"insert-venue",component :InsertVenueComponent},
       {path:"edit-food-sub-menu/:foodSubMenuId",component :EditFoodSubMenuComponent},
       {path:"edit-location/:locationId",component :EditLocationComponent},
       {path:"delete-food-sub-menu/:foodSubMenuId",component :DeleteFoodSubMenuComponent},
       {path:"delete-location/:locationId",component :DeleteLocationComponent},
-      {path:"delete-venue/:venueCityId",component :DeleteVenueComponent}
+      {path:"delete-venue/:venueCityId",component :DeleteVenueComponent},
+      {path:"report",component :ReportComponent},
+      {path:"appointment",component :AppointmentComponent},
+      {path:"clients-transaction-details",component :ClientsTransactionDetailsComponent},
+      {path:"after-book-event",component :AfterBookEventComponent},
     ])
   ],
   exports:[RouterModule],

@@ -1,16 +1,29 @@
-
 <div  class="jumbotron">
-    <h1 style="text-align: center;">Clients Feedbacks</h1>
+    <h2 style="text-align: center;">Users List</h2>
+    <hr>
         <table style="align-content: center;" class="table table-hover table-stripped table-responsive">
                 <thead>
-                    <th >Feedback Date</th>
-                    <th >Description</th>
+                    <th>event Id</th>
+                    <!-- <th> User Id</th> -->
+                    <th >eventDate</th>
+                    <th >noOfGuests</th>
+                    <th >eventDuration</th>
+                    <th >decorationBudget</th>
+                    <th> totalCost</th>
+                    <th></th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of feedback">
-                        <td>{{item.feedbackDate}}</td>   
-                        <td>{{item.desc}}</td>
+                    <tr *ngFor="let item of events">
+                        <td>{{item.eventId}}</td>  
+                        <!-- <td>{{item.user.userId}}</td> -->
+                        <td>{{item.eventDate}}</td>   
+                        <td>{{item.noOfGuests}}</td>
+                        <td>{{item.eventDuration}}</td>
+                        <td>{{item.decorationBudget}}</td>
+                        <td>{{item.totalCost}}</td>
+
                     </tr>         
                 </tbody>
               </table>
 </div>
+

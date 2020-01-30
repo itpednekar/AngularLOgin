@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListFoodSubMenuComponent } from './list-food-sub-menu.component';
+import { AfterBookEventComponent } from './after-book-event.component';
 
-describe('ListFoodSubMenuComponent', () => {
-  let component: ListFoodSubMenuComponent;
-  let fixture: ComponentFixture<ListFoodSubMenuComponent>;
+describe('AfterBookEventComponent', () => {
+  let component: AfterBookEventComponent;
+  let fixture: ComponentFixture<AfterBookEventComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListFoodSubMenuComponent ]
+      declarations: [ AfterBookEventComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListFoodSubMenuComponent);
+    fixture = TestBed.createComponent(AfterBookEventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

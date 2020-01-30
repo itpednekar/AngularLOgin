@@ -33,14 +33,11 @@ export class AdminService {
   listFoodTypes() {
     return this.http.get("http://localhost:8080/Day1.1/admin/listfoodtype");
   }
-  insertFoodType(eventid,food) 
+  insertFoodType(food) 
   {
-    return this.http.post("http://localhost:8080/Day1.1/admin/insertfood/" +eventid , food);
+    return this.http.post("http://localhost:8080/Day1.1/admin/insertfood", food);
   }
-  listFoodSubMenu() 
-  {
-    return this.http.get("http://localhost:8080/Day1.1/admin/listfoodsubmenu");  
-  }
+  
   listLocations() 
   {
     return this.http.get("http://localhost:8080/Day1.1/admin/listlocation");  
@@ -63,11 +60,6 @@ export class AdminService {
   insertVenue(venue) 
   {
     return this.http.post("http://localhost:8080/Day1.1/admin/insertvenuecity",venue);  
-  }
-
-  insertFoodSubMenu(food,foodSubMenu) 
-  {
-    return this.http.post("http://localhost:8080/Day1.1/admin/insertfoodsubmenu/ " +food ,foodSubMenu);
   }
   getEventDescById(eventdescno) 
   {

@@ -12,7 +12,7 @@ export class InsertFoodTypeComponent implements OnInit {
   constructor(private router:Router,
     private adminService:AdminService) { }
 
-food = {"foodType":"","category":""}
+
 ngOnInit() {
 }
 
@@ -22,10 +22,7 @@ console.log("In OnInsert foodType method");
 let foodtype = entireData.form.value;
 console.log(foodtype.event);
 
-this.food.foodType = foodtype.foodType;
-this.food.category = foodtype.category;
-console.log(this.food);
-let observableResult =  this.adminService.insertFoodType(foodtype.event, this.food);
+let observableResult =  this.adminService.insertFoodType(foodtype);
 observableResult.subscribe((data)=>{
 console.log(data);
 this.router.navigate(['/list-food-type']);
